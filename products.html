@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+</head>
+<body>
+    <h2>Product List</h2>
+    <form method="GET">
+        <input type="text" name="search" placeholder="Search product" value="{{ search }}">
+        <input type="submit" value="Search">
+    </form>
+    <ul>
+        {% for p in products %}
+            <li>{{ p.name }} - ₹{{ p.price }} | 
+                <a href="/add_to_cart/{{ p.id }}">Add to Cart</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/cart">View Cart</a>
+</body>
+</html>
